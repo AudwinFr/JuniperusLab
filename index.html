@@ -32,7 +32,7 @@
         }
         
         .prompt {
-            color: #bdbdbd;
+            color: #9e3a3a ; <!-- Rød -->
             font-weight: bold;
         }
         
@@ -111,6 +111,21 @@
             background-color: #1d1d1d;
 			color: #bdbadbd
         }
+		
+		.highlight-text1 {
+			color: #4CAF50; <!-- Grønn -->
+			front-weight: bold;
+		}
+		
+		.highlight-text2 { 
+			color: #dfe6e9 ; <!-- Hvit -->
+			front-weight: bold;
+		}
+		
+		.highlight-text3 { 
+			color: #ff6b6b  ; <!-- Lys rød -->
+			front-weight: bold;
+		}
     </style>
 </head>
 <body>
@@ -120,19 +135,18 @@
         </div>
         
         <div class="command">
-            <span class="prompt">user@audvin.no:~$</span> help
+            <span class="prompt">user@audvin.no:~$</span> <span class="highlight-text2">help</span>
         </div>
         <div class="output">
 Available commands:
   - about      : Hvem, hva, hvorfor
   - menu       : Navigasjonsmeny
-  - wiki       : Wiki
   - clear      : Tøm skjerm
-  - exit       : Avslutte terminal (tilbake til index)
+  - exit       : Avslutte terminal (tilbake til toppen)
         </div>
         
         <div class="command">
-            <span class="prompt">user@terminal:~$</span> about
+            <span class="prompt">user@terminal:~$</span> <span class="highlight-text2">about</span>
         </div>
         <div class="output">
 #########################################################
@@ -140,7 +154,7 @@ Available commands:
 #########################################################
 
 Jeg liker terminalen. Dette skal liksom forestille en terminal. 
-Håper den denne siden gir deg terminalvibber.
+Håper 	denne siden gir deg terminalvibber.
 
 Dette får vel være en slags blogg kanskje? Den er ikke rosa og den er definitvt 20-25 år for sent ute.
 Bli med meg mens jeg forsøker å lære meg nye ting mens jeg stirrer alderdommen i hvitøye.
@@ -148,8 +162,17 @@ Bli med meg mens jeg forsøker å lære meg nye ting mens jeg stirrer alderdomme
 Skriv 'menu' for å se tilgjenglig innhold.
         </div>
         
+		<section id="hjem">
+		<div class="command">
+                <span class="prompt">user@audvin.no:~$</span> <span class="highlight-text2">pwd</span>
+            </div>
+            <div class="output">
+/home/audvin/internett/audvin.no
+		</div>
+		</section>
+		
         <div class="command">
-            <span class="prompt">user@audvin.no:~$</span> menu
+            <span class="prompt">user@audvin.no:~$</span> <span class="highlight-text2">menu</span>
         </div>
         <div class="output">
 Menu:
@@ -158,19 +181,20 @@ Menu:
         <div class="menu">
             <a href="#hjem" class="menu-item">Hjem</a>
             <a href="#om" class="menu-item">Om</a>
-            <a href="wiki.html" class="menu-item">wiki</a>
+            <a href="#nettverk" class="menu-item">Nettverk</a>
+			<a href="#tjenester" class="menu-item">Tjenester</a>
             <a href="#kontakt" class="menu-item">Kontakt</a>
         </div>
         
         <div class="command">
-            <span class="prompt">user@audvin.no:~$</span> <span class="typingAnimation">echo "Hallo internett! Hører du meg?"</span>
+            <span class="prompt">user@audvin.no:~$</span> <span class="typingAnimation"><span class="highlight-text2">echo "Hallo internett! Hører du meg?"</span></span>
         </div>
         <div class="output">
 Hallo internett! Hører du meg?
         </div>
 		<section id="Om">
             <div class="command">
-                <span class="prompt">user@audvin.no:~$</span> cat om.txt
+                <span class="prompt">user@audvin.no:~$</span> <span class="highlight-text2">cat om.txt</span>
             </div>
             <div class="output">
 # Om meg og dette prosjektet
@@ -183,10 +207,48 @@ Denne hjemmelabben er mitt forsøk på å gjøre noe med det.
 
             </div>
         </section>
+		
+		<section id="nettverk">
+			<div class="command">
+				<span class="prompt">user@audvin.no:~$</span><span class="highlight-text2">nmap -sn 127.0.0.0/29</span>
+				<div class="output">
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-04-02 20:46 CEST
+Nmap scan report for 127.0.0.0
+Host is up.
+Nmap scan report for <span class="highlight-text1">Unifi Dream Machine Pro</span> (127.0.0.1)
+Host is up.
+Nmap scan report for <span class="highlight-text1">Unifi USW 16 Pro Max Poe</span> (127.0.0.2)
+Host is up.
+Nmap scan report for <span class="highlight-text1">Unifi USW 8 Lite Poe</span> (127.0.0.3)
+Host is up.
+Nmap scan report for <span class="highlight-text1">Camera1</span> (127.0.0.4)
+Host is up.
+Nmap scan report for <span class="highlight-text1">Camera2</span> (127.0.0.5)
+Host is up.
+Nmap scan report for <span class="highlight-text1">Juniperus Server</span> (127.0.0.6)
+Host is up.
+Nmap scan report for 127.0.0.7
+Host is up.
+Nmap done: 8 IP addresses (8 hosts up) scanned in 0.09 seconds
+				</div>
+		</section>
+		
+		<section id="tjenester">
+            <div class="command">
+                <span class="prompt">user@audvin.no:~$</span> <span class="highlight-text2">cd ~/audvin/internett/audvin.no/tjenester</span>
+			</div>
+			<div class="command">
+				<span class="prompt">user@audvin.no:~$</span> <span class="highlight-text2">ls</span>
+            </div>
+            <div class="output">
+<span class="highlight-text3">piHole    Grafana    Prometheus    HomeAssistant</span>
 
+            </div>
+        </section>
+		
         <section id="kontakt">
             <div class="command">
-                <span class="prompt">user@audvin.no:~$</span> cat kontakt.md
+                <span class="prompt">user@audvin.no:~$</span> <span class="highlight-text2">cat kontakt.md</span>
             </div>
             <div class="output">
 # Kontakt info
@@ -199,7 +261,7 @@ Jeg vet ikke hva du skulle spurt om, men du kan gjøre det via eposten over om d
         </section>
         
         <div class="command">
-            <span class="prompt">user@audvin.no:~$</span> <span class="cursor"></span>
+            <span class="prompt">user@audvin.no:~$</span> <span class="highlight-text2">exit</span><span class="cursor"></span>
         </div>
     </div>
 </body>
